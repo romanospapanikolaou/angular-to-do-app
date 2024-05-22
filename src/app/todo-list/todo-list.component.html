@@ -6,7 +6,7 @@
       <input
         id="taskTitle"
         [(ngModel)]="newTodoTitle"
-        placeholder="Add a new to-do"
+        placeholder="Add a new task"
         class="todo-input form-control"
       />
     </div>
@@ -22,8 +22,8 @@
         [(ngModel)]="newTodoDueDate"
       />
     </div>
+    <button (click)="addTodo()" class="add-button btn btn-success">Add</button>
   </div>
-  <button (click)="addTodo()" class="add-button btn btn-success">Add</button>
   <ul class="todo-list list-group mt-4">
     <li
       *ngFor="let todo of todos"

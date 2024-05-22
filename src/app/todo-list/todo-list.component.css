@@ -1,8 +1,22 @@
+body {
+  background-image: url("/src/assets/todo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
 .todo-app {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
-  background: #fff;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Slightly transparent white background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   text-align: center;
@@ -17,11 +31,9 @@ h1 {
 
 .input-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
   margin-bottom: 20px;
-  flex-wrap: wrap;
 }
 
 .form-group {
@@ -29,7 +41,8 @@ h1 {
   flex-direction: column;
   align-items: start;
   width: 100%;
-  max-width: 280px; /* Ensuring inputs do not take full width on larger screens */
+  max-width: 400px; /* Ensuring inputs do not take full width on larger screens */
+  margin-bottom: 10px;
 }
 
 .form-label {
