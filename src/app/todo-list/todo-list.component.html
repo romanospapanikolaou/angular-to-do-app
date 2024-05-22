@@ -1,38 +1,50 @@
 <div class="todo-app">
   <h1>To-Do List</h1>
   <div class="input-group mb-3">
-    <input
-      [(ngModel)]="newTodoTitle"
-      placeholder="Add a new to-do"
-      class="form-control"
-      aria-label="Todo title"
-    />
-    <input
-      type="text"
-      placeholder="Due Date"
-      class="form-control"
-      aria-label="Due Date"
-      bsDatepicker
-      [(ngModel)]="newTodoDueDate"
-    />
-    <button (click)="addTodo()" class="btn btn-success">Add</button>
+    <div class="form-group">
+      <label for="taskTitle" class="form-label">Task</label>
+      <input
+        id="taskTitle"
+        [(ngModel)]="newTodoTitle"
+        placeholder="Add a new task"
+        class="todo-input form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="dueDate" class="form-label">Due Date</label>
+      <input
+        id="dueDate"
+        type="text"
+        placeholder="Due Date"
+        class="todo-date form-control"
+        aria-label="Due Date"
+        bsDatepicker
+        [(ngModel)]="newTodoDueDate"
+      />
+    </div>
+    <button (click)="addTodo()" class="add-button btn btn-success">Add</button>
   </div>
-  <ul class="list-group">
+  <ul class="todo-list list-group mt-4">
     <li
       *ngFor="let todo of todos"
-      class="list-group-item d-flex justify-content-between align-items-center"
+      class="todo-item list-group-item d-flex justify-content-between align-items-center"
     >
-      <div>
+      <div class="d-flex align-items-center">
         <input
           type="checkbox"
           [(ngModel)]="todo.completed"
           (change)="toggleTodoCompletion(todo)"
+          class="todo-checkbox mr-2"
         />
         <span [class.completed]="todo.completed"
-          >{{ todo.title }} (Due: {{ todo.dueDate | date : "MMM d, y" }})</span
+          >{{ todo.title }} (Due:
+          {{ todo.dueDate | date : "dd/MM/yyyy" }})</span
         >
       </div>
-      <button (click)="deleteTodo(todo)" class="btn btn-danger btn-sm">
+      <button
+        (click)="deleteTodo(todo)"
+        class="delete-button btn btn-danger btn-sm"
+      >
         Delete
       </button>
     </li>

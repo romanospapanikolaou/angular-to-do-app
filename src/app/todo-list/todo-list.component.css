@@ -2,35 +2,136 @@
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
-  background: #f9f9f9;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   text-align: center;
+  font-family: "Roboto", sans-serif;
 }
 
 h1 {
   margin-bottom: 20px;
   color: #333;
-  font-family: "Arial", sans-serif;
+  font-weight: 700;
 }
 
 .input-group {
   display: flex;
   justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
   margin-bottom: 20px;
 }
 
-.form-control {
-  margin-right: 10px;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
-.list-group-item {
+.form-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.todo-input,
+.todo-date {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 1;
+  width: 100%;
+}
+
+.add-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-button:hover {
+  background: #218838;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background 0.3s ease;
 }
 
-.completed {
+.todo-item:hover {
+  background: #f9f9f9;
+}
+
+.todo-checkbox {
+  margin-right: 10px;
+}
+
+.todo-item span {
+  flex: 1;
+  text-align: left;
+}
+
+.todo-item span.completed {
   text-decoration: line-through;
   color: #999;
+}
+
+.delete-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #fff;
+  background: #dc3545;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.delete-button:hover {
+  background: #c82333;
+}
+
+@media (max-width: 600px) {
+  .todo-app {
+    padding: 15px;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .todo-input,
+  .todo-date,
+  .add-button {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .todo-input,
+  .todo-date {
+    margin-right: 0;
+  }
+
+  .add-button {
+    margin-bottom: 0;
+  }
 }

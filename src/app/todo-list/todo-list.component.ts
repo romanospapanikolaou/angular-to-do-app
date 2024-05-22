@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo, TodoService } from '../todo.service';
+import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 
 @Component({
   selector: 'app-todo-list',
@@ -11,7 +12,12 @@ export class TodoListComponent implements OnInit {
   newTodoTitle: string = '';
   newTodoDueDate: Date = new Date();
 
-  constructor(private todoService: TodoService) {}
+  constructor(
+    private todoService: TodoService,
+    private localeService: BsLocaleService
+  ) {
+    this.localeService.use('en-gb'); // Use the 'en-gb' locale
+  }
 
   ngOnInit(): void {
     this.todos = this.todoService.getTodos();
