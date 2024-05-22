@@ -4,6 +4,7 @@ export interface Todo {
   id: number;
   title: string;
   completed: boolean;
+  dueDate?: Date;
 }
 
 @Injectable({
@@ -19,8 +20,8 @@ export class TodoService {
     return this.todos;
   }
 
-  addTodo(title: string): void {
-    this.todos.push({ id: this.nextId++, title, completed: false });
+  addTodo(title: string, dueDate: Date): void {
+    this.todos.push({ id: this.nextId++, title, completed: false, dueDate });
   }
 
   toggleTodoCompletion(id: number): void {

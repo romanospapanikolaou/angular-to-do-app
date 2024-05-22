@@ -9,6 +9,7 @@ import { Todo, TodoService } from '../todo.service';
 export class TodoListComponent implements OnInit {
   todos: Todo[] = [];
   newTodoTitle: string = '';
+  newTodoDueDate: Date = new Date();
 
   constructor(private todoService: TodoService) {}
 
@@ -18,9 +19,10 @@ export class TodoListComponent implements OnInit {
 
   addTodo(): void {
     if (this.newTodoTitle.trim()) {
-      this.todoService.addTodo(this.newTodoTitle);
+      this.todoService.addTodo(this.newTodoTitle, this.newTodoDueDate);
       this.newTodoTitle = '';
-      this.todos = this.todoService.getTodos(); // Ensure the list is updated
+      this.newTodoDueDate = new Date();
+      this.todos = this.todoService.getTodos();
     }
   }
 
@@ -30,6 +32,6 @@ export class TodoListComponent implements OnInit {
 
   deleteTodo(todo: Todo): void {
     this.todoService.deleteTodo(todo.id);
-    this.todos = this.todoService.getTodos(); // Ensure the list is updated
+    this.todos = this.todoService.getTodos();
   }
 }

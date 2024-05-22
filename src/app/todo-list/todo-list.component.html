@@ -1,23 +1,40 @@
 <div class="todo-app">
   <h1>To-Do List</h1>
-  <div class="input-group">
+  <div class="input-group mb-3">
     <input
       [(ngModel)]="newTodoTitle"
       placeholder="Add a new to-do"
-      class="todo-input"
+      class="form-control"
+      aria-label="Todo title"
     />
-    <button (click)="addTodo()" class="add-button">Add</button>
+    <input
+      type="text"
+      placeholder="Due Date"
+      class="form-control"
+      aria-label="Due Date"
+      bsDatepicker
+      [(ngModel)]="newTodoDueDate"
+    />
+    <button (click)="addTodo()" class="btn btn-success">Add</button>
   </div>
-  <ul class="todo-list">
-    <li *ngFor="let todo of todos" class="todo-item">
-      <input
-        type="checkbox"
-        [(ngModel)]="todo.completed"
-        (change)="toggleTodoCompletion(todo)"
-        class="todo-checkbox"
-      />
-      <span [class.completed]="todo.completed">{{ todo.title }}</span>
-      <button (click)="deleteTodo(todo)" class="delete-button">Delete</button>
+  <ul class="list-group">
+    <li
+      *ngFor="let todo of todos"
+      class="list-group-item d-flex justify-content-between align-items-center"
+    >
+      <div>
+        <input
+          type="checkbox"
+          [(ngModel)]="todo.completed"
+          (change)="toggleTodoCompletion(todo)"
+        />
+        <span [class.completed]="todo.completed"
+          >{{ todo.title }} (Due: {{ todo.dueDate | date : "MMM d, y" }})</span
+        >
+      </div>
+      <button (click)="deleteTodo(todo)" class="btn btn-danger btn-sm">
+        Delete
+      </button>
     </li>
   </ul>
 </div>

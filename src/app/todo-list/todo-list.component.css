@@ -1,5 +1,5 @@
 .todo-app {
-  max-width: 500px;
+  max-width: 600px;
   margin: 50px auto;
   padding: 20px;
   background: #f9f9f9;
@@ -20,93 +20,17 @@ h1 {
   margin-bottom: 20px;
 }
 
-.todo-input {
-  flex: 1;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.add-button {
-  padding: 10px 20px;
-  margin-left: 10px;
-  font-size: 16px;
-  color: #fff;
-  background: #28a745;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.add-button:hover {
-  background: #218838;
-}
-
-.todo-list {
-  list-style: none;
-  padding: 0;
-}
-
-.todo-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.todo-item:last-child {
-  border-bottom: none;
-}
-
-.todo-checkbox {
+.form-control {
   margin-right: 10px;
 }
 
-.todo-item span {
-  flex: 1;
-  text-align: left;
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.todo-item span.completed {
+.completed {
   text-decoration: line-through;
   color: #999;
-}
-
-.delete-button {
-  padding: 5px 10px;
-  font-size: 14px;
-  color: #fff;
-  background: #dc3545;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.delete-button:hover {
-  background: #c82333;
-}
-
-/* Existing styles... */
-
-@media (max-width: 600px) {
-  .todo-app {
-    padding: 15px;
-  }
-
-  .input-group {
-    flex-direction: column;
-  }
-
-  .todo-input {
-    margin-bottom: 10px;
-    margin-left: 0;
-  }
-
-  .add-button {
-    width: 100%;
-  }
 }
