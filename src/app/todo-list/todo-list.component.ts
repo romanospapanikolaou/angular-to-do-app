@@ -20,6 +20,7 @@ export class TodoListComponent implements OnInit {
     if (this.newTodoTitle.trim()) {
       this.todoService.addTodo(this.newTodoTitle);
       this.newTodoTitle = '';
+      this.todos = this.todoService.getTodos(); // Ensure the list is updated
     }
   }
 
@@ -29,5 +30,6 @@ export class TodoListComponent implements OnInit {
 
   deleteTodo(todo: Todo): void {
     this.todoService.deleteTodo(todo.id);
+    this.todos = this.todoService.getTodos(); // Ensure the list is updated
   }
 }

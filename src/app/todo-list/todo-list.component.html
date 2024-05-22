@@ -1,18 +1,23 @@
 <div class="todo-app">
   <h1>To-Do List</h1>
   <div class="input-group">
-    <input [(ngModel)]="newTodoTitle" placeholder="Add a new to-do" />
-    <button (click)="addTodo()">Add</button>
+    <input
+      [(ngModel)]="newTodoTitle"
+      placeholder="Add a new to-do"
+      class="todo-input"
+    />
+    <button (click)="addTodo()" class="add-button">Add</button>
   </div>
-  <ul>
-    <li *ngFor="let todo of todos">
+  <ul class="todo-list">
+    <li *ngFor="let todo of todos" class="todo-item">
       <input
         type="checkbox"
         [(ngModel)]="todo.completed"
         (change)="toggleTodoCompletion(todo)"
+        class="todo-checkbox"
       />
       <span [class.completed]="todo.completed">{{ todo.title }}</span>
-      <button (click)="deleteTodo(todo)">Delete</button>
+      <button (click)="deleteTodo(todo)" class="delete-button">Delete</button>
     </li>
   </ul>
 </div>
