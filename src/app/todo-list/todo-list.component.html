@@ -33,8 +33,8 @@
         (change)="toggleTodoCompletion(todo)"
       />
       <span [class.completed]="todo.completed">
-        <span class="title">{{ todo.title }}</span> |
-        {{ todo.dueDate | date : "EEEE d MMM y" }}
+        {{ todo.dueDate | date : "EEEE d MMM y" }} |
+        <span class="title">{{ todo.title }}</span>
       </span>
 
       <button class="delete-button" (click)="deleteTodo(todo)">Delete</button>
