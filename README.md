@@ -19,7 +19,7 @@ To run this application locally, follow these steps:
 1. **Clone this repository:**
 
    ```bash
-   git clone https://github.com/yourusername/angular-todo-app.git
+   git clone https://github.com/romanospapanikolaou/angular-to-do-app.git
    ```
 
 2. **Navigate to the project directory:**
