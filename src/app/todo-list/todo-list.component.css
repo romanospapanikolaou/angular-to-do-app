@@ -1,5 +1,5 @@
 .todo-app {
-  height: 60vh;
+  /* height: 60vh; */
   width: 70vw;
   max-width: 700px;
   margin: 50px auto;
@@ -8,10 +8,10 @@
     255,
     255,
     255,
-    0.9
+    0.8
   ); /* Slightly transparent white background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+  border-radius: 40px;
   text-align: center;
   font-family: "Roboto", sans-serif;
 }
@@ -34,7 +34,7 @@ h1 {
   flex-direction: column;
   align-items: start;
   width: 100%;
-  max-width: 400px; /* Ensuring inputs do not take full width on larger screens */
+  max-width: 400px;
   margin-bottom: 10px;
 }
 
@@ -50,6 +50,7 @@ h1 {
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
+  border-radius: 40px;
 }
 
 .add-button {
@@ -58,14 +59,14 @@ h1 {
   color: #fff;
   background: #28a745;
   border: none;
-  border-radius: 5px;
+  border-radius: 40px;
   cursor: pointer;
   transition: background 0.3s ease;
   margin-top: 10px; /* Adding some space from the input container */
 }
 
 .add-button:hover {
-  background: #218838;
+  background: #1e7932;
 }
 
 .todo-list {
@@ -79,7 +80,7 @@ h1 {
   align-items: center;
   padding: 10px 15px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 40px;
   margin-bottom: 10px;
   transition: background 0.3s ease;
 }
@@ -108,7 +109,7 @@ h1 {
   color: #fff;
   background: #dc3545;
   border: none;
-  border-radius: 5px;
+  border-radius: 40px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
