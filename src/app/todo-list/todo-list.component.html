@@ -32,9 +32,11 @@
         [checked]="todo.completed"
         (change)="toggleTodoCompletion(todo)"
       />
-      <span [class.completed]="todo.completed"
-        >{{ todo.title }} | {{ todo.dueDate | date : "EEEE, d MMM, y" }}</span
-      >
+      <span [class.completed]="todo.completed">
+        <span class="title">{{ todo.title }}</span> |
+        {{ todo.dueDate | date : "EEEE d MMM y" }}
+      </span>
+
       <button class="delete-button" (click)="deleteTodo(todo)">Delete</button>
     </li>
   </ul>

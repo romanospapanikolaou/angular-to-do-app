@@ -95,12 +95,16 @@ h1 {
 
 .todo-item span {
   flex: 1;
-  text-align: center;
+  text-align: left;
 }
 
 .todo-item span.completed {
-  text-decoration: line-through;
+  text-decoration: line-through 2px;
   color: #999;
+}
+
+.title {
+  font-weight: bold;
 }
 
 .delete-button {
