@@ -2,6 +2,9 @@
 
 This is a simple to-do list application built using Angular. It allows users to create, update, and delete tasks, helping them organize their daily activities efficiently.
 
+![Weather App Screenshot](src/assets/Screenshot%201.png)
+![Weather App Screenshot](src/assets/Screenshot%202.png)
+
 ## Features
 
 - **Add Task:** Easily add new tasks to the to-do list.
