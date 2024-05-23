@@ -16,6 +16,6 @@ body {
   background-image: url("../src/assets/todo.jpg");
   background-size: cover;
   background-position: center;
-  filter: blur(2px); /* Adjust the blur radius as needed */
+  filter: blur(10px); /* Adjust the blur radius as needed */
   z-index: -1; /* Ensure the container stays behind other content */
 }
