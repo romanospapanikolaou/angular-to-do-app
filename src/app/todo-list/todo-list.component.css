@@ -95,7 +95,7 @@ h1 {
 
 .todo-item span {
   flex: 1;
-  text-align: left;
+  text-align: center;
 }
 
 .todo-item span.completed {
