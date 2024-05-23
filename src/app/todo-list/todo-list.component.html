@@ -11,7 +11,7 @@
       />
     </div>
     <div class="form-group">
-      <label for="dueDate" class="form-label">Due Date</label>
+      <label for="dueDate" class="form-label">Date</label>
       <input
         id="dueDate"
         type="text"
@@ -37,8 +37,7 @@
           class="todo-checkbox mr-2"
         />
         <span [class.completed]="todo.completed"
-          >{{ todo.title }} (Due:
-          {{ todo.dueDate | date : "dd/MM/yyyy" }})</span
+          >{{ todo.title }} ({{ todo.dueDate | date : "dd/MM/yyyy" }})</span
         >
       </div>
       <button
