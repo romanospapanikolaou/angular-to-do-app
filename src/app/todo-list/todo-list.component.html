@@ -9,6 +9,7 @@
         class="todo-input"
         [(ngModel)]="newTodoTitle"
         placeholder="Enter task title"
+        (keyup.enter)="addTodo()"
       />
     </div>
     <div class="form-group">
@@ -18,6 +19,7 @@
         id="todoDueDate"
         class="todo-date"
         [(ngModel)]="newTodoDueDate"
+        (keyup.enter)="addTodo()"
       />
     </div>
     <button class="add-button" (click)="addTodo()">Add Task</button>
