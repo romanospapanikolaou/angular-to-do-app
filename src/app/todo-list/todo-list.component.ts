@@ -10,14 +10,15 @@ import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 export class TodoListComponent implements OnInit {
   todos: Todo[] = [];
   newTodoTitle: string = '';
-  newTodoDueDate: Date = new Date();
-  editingTodo: Todo | null = null; // Track the todo being edited
+  newTodoDueDate: Date;
+  editingTodo: Todo | null = null;
 
   constructor(
     private todoService: TodoService,
     private localeService: BsLocaleService
   ) {
-    this.localeService.use('en-gb'); // Use the 'en-gb' locale
+    this.localeService.use('en-gb');
+    this.newTodoDueDate = new Date();
   }
 
   ngOnInit(): void {
@@ -28,7 +29,7 @@ export class TodoListComponent implements OnInit {
     if (this.newTodoTitle.trim()) {
       this.todoService.addTodo(this.newTodoTitle, this.newTodoDueDate);
       this.newTodoTitle = '';
-      this.newTodoDueDate = new Date();
+      this.newTodoDueDate = new Date(); // Reset to today's date after adding a todo
       this.todos = this.todoService.getTodos();
     }
   }
