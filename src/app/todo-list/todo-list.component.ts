@@ -41,17 +41,4 @@ export class TodoListComponent implements OnInit {
     this.todoService.deleteTodo(todo.id);
     this.todos = this.todoService.getTodos();
   }
-
-  // Method to set the todo to be edited
-  setEditingTodo(todo: Todo): void {
-    this.editingTodo = todo;
-  }
-
-  // Method to update the todo being edited
-  updateTodo(): void {
-    if (this.editingTodo) {
-      this.todoService.updateTodo(this.editingTodo);
-      this.editingTodo = null;
-    }
-  }
 }
