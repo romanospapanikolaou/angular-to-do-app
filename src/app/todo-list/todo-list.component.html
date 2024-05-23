@@ -23,6 +23,7 @@
       />
     </div>
     <button class="add-button" (click)="addTodo()">Add Task</button>
+    <button class="clear-button" (click)="clearAllTodos()">Clear All</button>
   </div>
   <ul class="todo-list">
     <li *ngFor="let todo of todos" class="todo-item">
@@ -37,7 +38,6 @@
         <br />
         <span class="title">{{ todo.title }}</span>
       </span>
-
       <button class="delete-button" (click)="deleteTodo(todo)">Delete</button>
     </li>
   </ul>

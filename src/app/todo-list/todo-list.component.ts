@@ -58,4 +58,9 @@ export class TodoListComponent implements OnInit {
     this.todoService.deleteTodo(todo.id);
     this.todos = this.todoService.getTodos();
   }
+
+  clearAllTodos(): void {
+    this.todoService.clearAllTodos();
+    this.todos = [];
+  }
 }

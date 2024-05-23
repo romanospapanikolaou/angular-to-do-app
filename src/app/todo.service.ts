@@ -3,28 +3,28 @@ import { Injectable } from '@angular/core';
 export interface Todo {
   id: number;
   title: string;
+  dueDate: Date;
   completed: boolean;
-  dueDate?: Date;
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodoService {
-  updateTodo(editingTodo: Todo) {
-    throw new Error('Method not implemented.');
-  }
   private todos: Todo[] = [];
-  private nextId: number = 1;
-
-  constructor() {}
+  private nextId = 1;
 
   getTodos(): Todo[] {
     return this.todos;
   }
 
   addTodo(title: string, dueDate: Date): void {
-    this.todos.push({ id: this.nextId++, title, completed: false, dueDate });
+    this.todos.push({
+      id: this.nextId++,
+      title,
+      dueDate,
+      completed: false,
+    });
   }
 
   toggleTodoCompletion(id: number): void {
@@ -36,5 +36,9 @@ export class TodoService {
 
   deleteTodo(id: number): void {
     this.todos = this.todos.filter((t) => t.id !== id);
+  }
+
+  clearAllTodos(): void {
+    this.todos = [];
   }
 }
