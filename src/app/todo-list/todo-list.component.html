@@ -1,51 +1,49 @@
 <div class="todo-app">
-  <h1>To-Do List</h1>
+  <h1>To Do List</h1>
   <div class="input-container">
     <div class="form-group">
-      <label for="taskTitle" class="form-label">Task</label>
+      <label for="todoTitle" class="form-label">Title:</label>
       <input
-        id="taskTitle"
+        type="text"
+        id="todoTitle"
+        class="todo-input"
         [(ngModel)]="newTodoTitle"
-        placeholder="Add a new task"
-        class="todo-input form-control"
+        placeholder="Enter task title"
       />
     </div>
     <div class="form-group">
-      <label for="dueDate" class="form-label">Date</label>
+      <label for="todoDueDate" class="form-label">Due Date:</label>
       <input
-        id="dueDate"
-        type="text"
-        placeholder="Due Date"
-        class="todo-date form-control"
-        aria-label="Due Date"
-        bsDatepicker
+        type="date"
+        id="todoDueDate"
+        class="todo-date"
         [(ngModel)]="newTodoDueDate"
       />
     </div>
-    <button (click)="addTodo()" class="add-button btn btn-success">Add</button>
+    <button class="add-button" (click)="addTodo()">Add Task</button>
   </div>
-  <ul class="todo-list list-group mt-4">
-    <li
-      *ngFor="let todo of todos"
-      class="todo-item list-group-item d-flex justify-content-between align-items-center"
-    >
-      <div class="d-flex align-items-center">
-        <input
-          type="checkbox"
-          [(ngModel)]="todo.completed"
-          (change)="toggleTodoCompletion(todo)"
-          class="todo-checkbox mr-2"
-        />
-        <span [class.completed]="todo.completed"
-          >{{ todo.title }} ({{ todo.dueDate | date : "dd/MM/yyyy" }})</span
-        >
-      </div>
-      <button
-        (click)="deleteTodo(todo)"
-        class="delete-button btn btn-danger btn-sm"
+  <ul class="todo-list">
+    <li *ngFor="let todo of todos" class="todo-item">
+      <input
+        type="checkbox"
+        class="todo-checkbox"
+        [checked]="todo.completed"
+        (change)="toggleTodoCompletion(todo)"
+      />
+      <span [class.completed]="todo.completed"
+        >{{ todo.title }} - {{ todo.dueDate | date }}</span
       >
-        Delete
-      </button>
+      <button class="edit-button" (click)="setEditingTodo(todo)">Edit</button>
+      <button class="delete-button" (click)="deleteTodo(todo)">Delete</button>
+      <ng-container *ngIf="editingTodo === todo">
+        <input type="text" [(ngModel)]="editingTodo.title" class="todo-input" />
+        <input
+          type="date"
+          [(ngModel)]="editingTodo.dueDate"
+          class="todo-date"
+        />
+        <button (click)="updateTodo()" class="update-button">Update</button>
+      </ng-container>
     </li>
   </ul>
 </div>

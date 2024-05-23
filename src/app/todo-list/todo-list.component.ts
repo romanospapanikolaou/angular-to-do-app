@@ -11,6 +11,7 @@ export class TodoListComponent implements OnInit {
   todos: Todo[] = [];
   newTodoTitle: string = '';
   newTodoDueDate: Date = new Date();
+  editingTodo: Todo | null = null; // Track the todo being edited
 
   constructor(
     private todoService: TodoService,
@@ -39,5 +40,18 @@ export class TodoListComponent implements OnInit {
   deleteTodo(todo: Todo): void {
     this.todoService.deleteTodo(todo.id);
     this.todos = this.todoService.getTodos();
+  }
+
+  // Method to set the todo to be edited
+  setEditingTodo(todo: Todo): void {
+    this.editingTodo = todo;
+  }
+
+  // Method to update the todo being edited
+  updateTodo(): void {
+    if (this.editingTodo) {
+      this.todoService.updateTodo(this.editingTodo);
+      this.editingTodo = null;
+    }
   }
 }

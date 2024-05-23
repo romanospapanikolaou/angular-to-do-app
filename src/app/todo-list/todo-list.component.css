@@ -118,6 +118,35 @@ h1 {
   background: #c82333;
 }
 
+.edit-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #fff;
+  background: #dc3545;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.edit-button:hover {
+  background: #c82333;
+}
+
+.update-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #fff;
+  background: #dc3545;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.update-button:hover {
+  background: #c82333;
+}
 @media (max-width: 600px) {
   .todo-app {
     padding: 15px;

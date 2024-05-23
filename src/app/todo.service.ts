@@ -11,6 +11,9 @@ export interface Todo {
   providedIn: 'root',
 })
 export class TodoService {
+  updateTodo(editingTodo: Todo) {
+    throw new Error('Method not implemented.');
+  }
   private todos: Todo[] = [];
   private nextId: number = 1;
 
