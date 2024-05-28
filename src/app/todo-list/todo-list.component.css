@@ -123,6 +123,10 @@ h1 {
   box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.3);
 }
 
+.todo-checkbox:hover {
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.3);
+}
+
 .todo-item span {
   flex: 1;
   text-align: left;
