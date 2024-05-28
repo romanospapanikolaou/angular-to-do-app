@@ -144,6 +144,12 @@ h1 {
   font-weight: bold;
 }
 
+.user-instructions {
+  bottom: 30px;
+  width: 350px; /* Adjust width as needed */
+  text-align: left; /* Align text to left */
+}
+
 @media (max-width: 600px) {
   .todo-app {
     padding: 15px;
