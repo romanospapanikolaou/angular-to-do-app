@@ -67,7 +67,7 @@ h1 {
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
-  background: #28a745;
+  background: #a72828;
   border: none;
   border-radius: 40px;
   cursor: pointer;
@@ -76,7 +76,7 @@ h1 {
 }
 
 .clear-button:hover {
-  background: #1e7932;
+  background: #791e1e;
 }
 
 .todo-list {
