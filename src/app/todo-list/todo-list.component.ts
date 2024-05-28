@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Todo, TodoService } from '../todo.service';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 
@@ -31,6 +31,16 @@ export class TodoListComponent implements OnInit {
     this.todos = this.todoService.getTodos();
   }
 
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (
+      event.key === 'Backspace' &&
+      document.activeElement.tagName !== 'INPUT'
+    ) {
+      this.deleteLastTask();
+    }
+  }
+
   addTodo(): void {
     if (this.newTodoTitle.trim()) {
       this.todoService.addTodo(
@@ -57,6 +67,13 @@ export class TodoListComponent implements OnInit {
   deleteTodo(todo: Todo): void {
     this.todoService.deleteTodo(todo.id);
     this.todos = this.todoService.getTodos();
+  }
+
+  deleteLastTask(): void {
+    if (this.todos.length > 0) {
+      this.todoService.deleteTodo(this.todos[this.todos.length - 1].id);
+      this.todos.pop();
+    }
   }
 
   clearAllTodos(): void {
