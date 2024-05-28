@@ -42,21 +42,29 @@ h1 {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 100%;
   border-radius: 40px;
+  width: 100%;
 }
 
-.add-button {
+.add-button,
+.clear-button,
+.delete-button {
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
-  background: #28a745;
   border: none;
   border-radius: 40px;
   cursor: pointer;
   transition: background 0.3s ease;
-  margin-top: 10px; /* Adding some space from the input container */
+}
+
+.add-button,
+.clear-button {
+  margin-top: 10px;
+}
+
+.add-button {
+  background: #28a745;
 }
 
 .add-button:hover {
@@ -64,19 +72,19 @@ h1 {
 }
 
 .clear-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #fff;
-  background: #a72828;
-  border: none;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  margin-top: 10px; /* Adding some space from the input container */
+  background: #dc3545;
 }
 
 .clear-button:hover {
-  background: #791e1e;
+  background: #ac1e2c;
+}
+
+.delete-button {
+  background: #dc3545;
+}
+
+.delete-button:hover {
+  background: #ac1e2c;
 }
 
 .todo-list {
@@ -104,7 +112,6 @@ h1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   margin-right: 10px;
-
   width: 30px;
   height: 30px;
   border: 2px solid #ccc;
@@ -117,10 +124,6 @@ h1 {
 .todo-checkbox:checked {
   background-color: #28a745;
   border-color: #28a745;
-}
-
-.todo-checkbox:focus {
-  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.3);
 }
 
 .todo-checkbox:hover {
@@ -139,21 +142,6 @@ h1 {
 
 .title {
   font-weight: bold;
-}
-
-.delete-button {
-  padding: 5px 10px;
-  font-size: 14px;
-  color: #fff;
-  background: #dc3545;
-  border: none;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.delete-button:hover {
-  background: #c82333;
 }
 
 @media (max-width: 600px) {
