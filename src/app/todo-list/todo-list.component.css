@@ -100,7 +100,27 @@ h1 {
 }
 
 .todo-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   margin-right: 10px;
+
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.todo-checkbox:checked {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.todo-checkbox:focus {
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.3);
 }
 
 .todo-item span {

@@ -27,17 +27,17 @@
   </div>
   <ul class="todo-list">
     <li *ngFor="let todo of todos" class="todo-item">
+      <span [class.completed]="todo.completed">
+        {{ todo.dueDate | date : "EEEE d MMM y" }}
+        <br />
+        <span class="title">{{ todo.title }}</span>
+      </span>
       <input
         type="checkbox"
         class="todo-checkbox"
         [checked]="todo.completed"
         (change)="toggleTodoCompletion(todo)"
       />
-      <span [class.completed]="todo.completed">
-        {{ todo.dueDate | date : "EEEE d MMM y" }}
-        <br />
-        <span class="title">{{ todo.title }}</span>
-      </span>
       <button class="delete-button" (click)="deleteTodo(todo)">Delete</button>
     </li>
   </ul>
